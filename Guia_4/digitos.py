@@ -7,7 +7,7 @@ def dígitos(x):
         c += 1
 
         # Divide x por 10 usando división entera (descarta la parte decimal)
-        x = x // 11
+        x = x // 10
     # Retorna el número total de dígitos
     return c
 # Solicita al usuario que ingrese un número entero positivo
