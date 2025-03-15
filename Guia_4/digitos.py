@@ -2,7 +2,7 @@ def dígitos(x):
     # Inicializa el contador de dígitos en 0
     c = 0
     # Bucle que se ejecuta mientras x sea mayor que 0
-    while x > 1:
+    while x > 0:
         # Incrementa el contador de dígitos en 1
         c += 1
 
