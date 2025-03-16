@@ -1,7 +1,7 @@
 def Ordenar():
-    N1=int(input("Digíte Numero 1:"))
-    N2=int(input("Digíte Numero 2:"))
-    N3=int(input("Digíte Numero 3:"))
+    N1=float(input("Digíte Numero 1:"))
+    N2=float(input("Digíte Numero 2:"))
+    N3=float(input("Digíte Numero 3:"))
     if((N1>N2) and (N1>N3)):
         if (N2>=N3):
             print(f"{N1,N2,N3}")
