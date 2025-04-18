@@ -17,5 +17,4 @@ def switch_case ():
             print("Domingo")
         case _:
             print("Dia invalido")
-
 switch_case()
