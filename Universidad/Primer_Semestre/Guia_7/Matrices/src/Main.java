@@ -1,15 +1,25 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import javax.swing.*;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+
+public class Main {
+    int[] ArrayNumbers;
+    int Sumatoria;
+    String ArrayDisplay;
+
+
+    public Main() {
+        ArrayNumbers = new int[5];
+        Sumatoria = 0;
+        for (int pos = 0; pos < 5; pos++) {
+            ArrayDisplay= JOptionPane.showInputDialog("Introduce un numero: ");
+            ArrayNumbers[pos] =Integer.parseInt(ArrayDisplay);
+            Sumatoria= Sumatoria + ArrayNumbers[pos];
         }
+        JOptionPane.showMessageDialog(null, "La sumatoria es: " + Sumatoria);
+    }
+
+    public static void main(String[] args) {
+        Main solution = new Main();
+
     }
 }
