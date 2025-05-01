@@ -3,25 +3,25 @@ import javax.swing.*;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    // declaracion de variables
+    // variables declaration
     int [][] matriz;
     int objetivo;
 
 
     public Main() {
         matriz = new int[3][3]; //tamaño de la matriz
-        //usuario ingresa datos de la matriz
+        //user input for the matrix
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
                 String input = JOptionPane.showInputDialog(null, "Ingrese un numero para posición [" + i + "][" + j + "]");
                 matriz[i][j] = Integer.parseInt(input);
             }
         }
-      //Input del numero objetivo
+      //Input objective number
         String input = JOptionPane.showInputDialog(null, "Ingrese el numero objetivo");
             objetivo = Integer.parseInt(input);
 
-        //logica para encontrar el numero objetivo
+        //logic to find the objective number
             boolean encontrado = false;
             for (int i = 0; i < matriz.length; i++) {
                 for (int j = 0; j < matriz[i].length; j++){
