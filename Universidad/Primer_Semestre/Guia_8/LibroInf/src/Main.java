@@ -3,23 +3,23 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        Libro libro = new Libro();
+        LibroNuevo libro = new LibroNuevo();
         libro.mostrarDatos();
 
         }
     }
-class Libro {
+class LibroNuevo {
 
-    //declaracion de variables
+    //variables declaration
 
     String titulo;
     String autor;
     int añoPublicacion;
 
-    public Libro() {
+    public LibroNuevo() {
         String titulo_input = JOptionPane.showInputDialog("Ingrese el titulo del libro");
         String autor_input = JOptionPane.showInputDialog("Ingrese el autor del libro");
-        String año_str = JOptionPane.showInputDialog("Ingrese el año de publicaion del libro");
+        String año_str = JOptionPane.showInputDialog("Ingrese el año de publicacion del libro");
         int añoInput = Integer.parseInt(año_str);
 
         this.autor = autor_input;
