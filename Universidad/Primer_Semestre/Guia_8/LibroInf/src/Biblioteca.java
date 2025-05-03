@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Biblioteca {
 
-    private ArrayList<LibroNuevo> listaDeLibros;
+    private final ArrayList<LibroNuevo> listaDeLibros;
 
     //creation array
 
@@ -15,7 +15,7 @@ public Biblioteca() {
 public void agregarLibro(LibroNuevo libro) {
     listaDeLibros.add(libro);
 }
-//metodo para mostrar la lista
+//method para mostrar la lista
     public void mostrarLista() {
         for (LibroNuevo libro : listaDeLibros) {
             libro.mostrarDatos();
