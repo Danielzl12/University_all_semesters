@@ -3,8 +3,6 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        LibroNuevo libroVar = new LibroNuevo();
-        libroVar.mostrarDatos();
         Biblioteca miBiblioteca = new Biblioteca();
         JOptionPane.showMessageDialog(null,"Ingrese los datos del primer libro");
         LibroNuevo libro1 = new LibroNuevo();
