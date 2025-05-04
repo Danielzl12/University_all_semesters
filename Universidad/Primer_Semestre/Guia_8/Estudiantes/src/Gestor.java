@@ -3,7 +3,7 @@ import java.util.ArrayList;
 //gestor de estudiantes
 public class Gestor {
     //creacion del array
-    private ArrayList<Estudiante> listaDeEstudiantes;
+    private final ArrayList<Estudiante> listaDeEstudiantes;
 
 
     //constructor del gestor
