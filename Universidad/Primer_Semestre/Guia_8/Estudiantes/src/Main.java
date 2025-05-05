@@ -11,7 +11,7 @@ public class Main {
                 2. Buscar estudiante por codigo
                 3. Buscar estudiante por nombre
                 4. Salir
-                --------------------------
+                --------------------------------------------------
                 Ingrese una opcion:\s""";
 
         String opcionElegida = "";
