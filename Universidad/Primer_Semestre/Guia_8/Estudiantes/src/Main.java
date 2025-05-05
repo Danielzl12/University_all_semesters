@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Gestor gestor = new Gestor();
 
-        //bucle para mostrar al usuario la opcion de adicionar mas estudiantes
+        //interfaz tipo menu por medio de while y switch case
         String menu = """
                 ---Menu de Gestion de estudiantes---
                 1. Agregar estudiante
