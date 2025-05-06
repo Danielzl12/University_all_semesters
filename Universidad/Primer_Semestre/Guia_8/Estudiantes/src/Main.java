@@ -100,6 +100,7 @@ public class Main {
                         JOptionPane.showMessageDialog(null, "Ha salido del sistema");
                     break;
                     default:
+                        //default es la respuesta por defecto que da el sistema si el input no se escuentra en el switch case
                         JOptionPane.showMessageDialog(null,"Opcion invalida: ");
                 }
             }

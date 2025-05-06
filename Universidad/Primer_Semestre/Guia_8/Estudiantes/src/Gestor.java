@@ -29,7 +29,8 @@ public class Gestor {
     //methods para buscar estudiantes por nombre
     public Estudiante buscarPorNombres(String Nombres) {
         for (Estudiante estudiante : listaDeEstudiantes) {
-            if (estudiante.getNombres().equals(Nombres)) {
+            //equalsIgnoreCase para que al codigo no le importe si está en mayusculas o no
+            if (estudiante.getNombres().equalsIgnoreCase(Nombres)) {
                 return estudiante;
             }
         }
