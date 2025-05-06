@@ -1,5 +1,3 @@
-import javax.swing.*;
-
 public class Estudiante{
     //declaracion de variables de la clase
     String nombres;
@@ -8,13 +6,13 @@ public class Estudiante{
     int codigoEstudiantil;
     int edad;
 
-    //constructor de la clase #1 ya que asi lo pide la guìa (en este caso se separo entre string e int)
+    //constructor de la clase #1, ya que asi lo pide la guìa (en este caso se separa entre string e int)
     public Estudiante(String nombres, String carrera, String semestre) {
         this.nombres = nombres;
         this.carrera = carrera;
         this.semestre = semestre;
     }
-    //contructor de la clase #2
+    //constructor de la clase #2
     public Estudiante(int codigoEstudiantil, int edad) {
         this.codigoEstudiantil = codigoEstudiantil;
         this.edad = edad;

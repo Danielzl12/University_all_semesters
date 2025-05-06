@@ -10,15 +10,16 @@ public class Main {
                 1. Agregar estudiante
                 2. Buscar estudiante por codigo
                 3. Buscar estudiante por nombre
-                4. Salir
+                4. Modificar estudiante
+                5. Salir
                 --------------------------------------------------
                 Ingrese una opcion:\s""";
 
         String opcionElegida = "";
-        while (!opcionElegida.equals("4")) {
+        while (!opcionElegida.equals("5")) {
             opcionElegida = JOptionPane.showInputDialog(null, menu);
             if (opcionElegida == null) {
-                opcionElegida = "4";
+                opcionElegida = "5";
             }else {
                 opcionElegida = opcionElegida.trim();
 
@@ -75,10 +76,31 @@ public class Main {
                             }
                         break;
                     case "4":
-                        JOptionPane.showMessageDialog(null, "Ha salido del sistema");
+                        JOptionPane.showMessageDialog(null, "Ha seleccionado modificar estudiante:");
+
+                        //logica para modificar el estudiante
+                        int codigoModificar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el codigo del estudiante a modificar: "));
+                        Estudiante estudianteModificar = gestor.buscarPorCodigo(codigoModificar);
+                        if (estudianteModificar == null) {
+                            JOptionPane.showMessageDialog(null, "El estudiante con el codigo " + codigoModificar + " no existe");
+                        }
+                        else {
+                            String nombreModificar = JOptionPane.showInputDialog("Ingrese el nombre del estudiante a modificar: ");
+                            String carreraModificar = JOptionPane.showInputDialog("Ingrese la carrera del estudiante a modificar: ");
+                            String semestreModificar = JOptionPane.showInputDialog("Ingrese el semestre del estudiante a modificar: ");
+                            int edadModificar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la edad del estudiante a modificar: "));
+                            estudianteModificar.setNombres(nombreModificar);
+                            estudianteModificar.setCarrera(carreraModificar);
+                            estudianteModificar.setSemestre(semestreModificar);
+                            estudianteModificar.setEdad(edadModificar);
+                            JOptionPane.showMessageDialog(null, "Estudiante modificado correctamente");
+                        }
                         break;
+                    case "5":
+                        JOptionPane.showMessageDialog(null, "Ha salido del sistema");
+                    break;
                     default:
-                        throw new IllegalStateException("Opcion invalida: " + opcionElegida);
+                        JOptionPane.showMessageDialog(null,"Opcion invalida: ");
                 }
             }
         }

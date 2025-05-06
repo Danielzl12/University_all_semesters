@@ -11,12 +11,12 @@ public class Gestor {
         listaDeEstudiantes = new ArrayList<>();
 
     }
-    //metodo para agregar estudiantes al array
+    //methods para agregar estudiantes al array
     public void adicionarEstudiante(Estudiante estudiante) {
         listaDeEstudiantes.add(estudiante);
 
     }
-    //metodo para buscar estudiantes por codigo
+    //methods para buscar estudiantes por codigo
 
     public Estudiante buscarPorCodigo(int codigoEstudiantil) {
         for (Estudiante estudiante : listaDeEstudiantes) {
@@ -26,7 +26,7 @@ public class Gestor {
         }
         return null;
     }
-    //metodo para buscar estudiantes por nombre
+    //methods para buscar estudiantes por nombre
     public Estudiante buscarPorNombres(String Nombres) {
         for (Estudiante estudiante : listaDeEstudiantes) {
             if (estudiante.getNombres().equals(Nombres)) {
