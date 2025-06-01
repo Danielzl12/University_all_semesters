@@ -33,16 +33,16 @@ public class Main {
     public static void main(String[] args) {
         Main mrt = new Main();
         int[][] MatrizTranspuestaResultante = mrt.transpuesta();
-        String resultadoCompleto = "La matriz transpuesta es: \n \n ";
-        for (int i = 0; i < MatrizTranspuestaResultante.length; i++) {
-            for (int j = 0; j < MatrizTranspuestaResultante[i].length; j++) {
-                resultadoCompleto += MatrizTranspuestaResultante[i][j];
-                if (j < MatrizTranspuestaResultante[i].length - 1) {
-                    resultadoCompleto += " \t ";
+        StringBuilder resultadoCompleto = new StringBuilder("La matriz transpuesta es: \n \n ");
+        for (int[] ints : MatrizTranspuestaResultante) {
+            for (int j = 0; j < ints.length; j++) {
+                resultadoCompleto.append(ints[j]);
+                if (j < ints.length - 1) {
+                    resultadoCompleto.append(" \t ");
                 }
             }
-            resultadoCompleto += " \n ";
+            resultadoCompleto.append(" \n ");
         }
-        JOptionPane.showMessageDialog(null, resultadoCompleto, "Resultado de la transpuesta", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, resultadoCompleto.toString(), "Resultado de la transpuesta", JOptionPane.INFORMATION_MESSAGE);
     }
 }
