@@ -1,4 +1,15 @@
+import java.util.List;
+import java.util.Date;
+import.java.util.ArrayList;
+
+
 public class Asistente {
-    //declaracion de las variables
+    private List<Estudiante> estudianteList;
+    private List<Asignatura> asignaturaList;
+}
+
+
+public void registrar_estudiante(Estudiante estudiante) {
 
 }
+
