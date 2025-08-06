@@ -2,15 +2,11 @@ public class Estudiante {
     String nombres;
     String carrera;
     String semestre;
-    int codigoEstudiantil;
-    int edad;
 
     public Estudiante(String nombres, String carrera, String semestre, int codigoEstudiantil, int edad){
         this.nombres = nombres;
         this.carrera = carrera;
         this.semestre = semestre;
-        this.codigoEstudiantil = codigoEstudiantil;
-        this.edad = edad;
     }
     //instruccion para obtener y mostrar datos de la clase
     public String getNombres() {
@@ -30,17 +26,5 @@ public class Estudiante {
     }
     public void setSemestre(String semestre) {
         this.semestre = semestre;
-    }
-    public int getCodigoEstudiantil() {
-        return codigoEstudiantil;
-    }
-    public void setCodigoEstudiantil(int codigoEstudiantil) {
-        this.codigoEstudiantil = codigoEstudiantil;
-    }
-    public int getEdad() {
-        return edad;
-    }
-    public void setEdad(int edad) {
-        this.edad = edad;
     }
 }
