@@ -3,7 +3,7 @@ public class Estudiante {
     String carrera;
     String semestre;
 
-    public Estudiante(String nombres, String carrera, String semestre, int codigoEstudiantil, int edad){
+    public Estudiante(String nombres, String carrera, String semestre){
         this.nombres = nombres;
         this.carrera = carrera;
         this.semestre = semestre;
