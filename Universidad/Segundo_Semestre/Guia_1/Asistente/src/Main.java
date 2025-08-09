@@ -100,11 +100,11 @@ public class Main {
                         System.out.print("Mes de entrega (ej: 12 para Diciembre): ");
                         int mes = scanner.nextInt() - 1; // Calendar es 0-11
                         System.out.print("Año de entrega (ej: 2025): ");
-                        int anio = scanner.nextInt();
+                        int year = scanner.nextInt();
                         scanner.nextLine();
 
                         Calendar cal = Calendar.getInstance();
-                        cal.set(anio, mes, dia);
+                        cal.set(year, mes, dia);
                         asigEval.agregar_evaluacion(new Evaluacion(nomEval, cal.getTime()));
                         System.out.println("¡Evaluación agregada!");
                     } else {

@@ -5,13 +5,13 @@ public class Estudiante {
     String nombres;
     String carrera;
     String semestre;
-    private List<Asignatura> asignaturasInscritas; // <-- ¡LA PIEZA CLAVE!
+    private List<Asignatura> asignaturasInscritas;
 
     public Estudiante(String nombres, String carrera, String semestre) {
         this.nombres = nombres;
         this.carrera = carrera;
         this.semestre = semestre;
-        this.asignaturasInscritas = new ArrayList<>(); // <-- Se inicializa la lista
+        this.asignaturasInscritas = new ArrayList<>(); // Se inicializa la lista
     }
 
     // Metodo para registrar al estudiante

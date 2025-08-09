@@ -47,7 +47,6 @@ public class Asistente {
 
                     if (diasRestantes >= 0 && diasRestantes <= 7) {
                         System.out.println("--------------------------------------------------");
-
                         System.out.println(" ¡ALERTA PARA " + estudiante.getNombres().toUpperCase() + "!");
                         System.out.println("   -> Asignatura: " + asignatura.getNombre_asignatura());
                         System.out.println("   -> Evaluación: " + evaluacion.getNombre_evaluacion());
