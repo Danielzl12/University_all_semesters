@@ -11,7 +11,7 @@ public class Asistente {
         this.asignaturasRegistradas = new ArrayList<>();
     }
 
-    // Métodos para registrar (los que ya tenías)
+    // Métodos para registrar
     public void registrarEstudiante(Estudiante estudiante) {
         this.estudiantesRegistrados.add(estudiante);
     }
@@ -29,24 +29,25 @@ public class Asistente {
         return asignaturasRegistradas;
     }
 
-    // --- ¡MÉTODO GENERAR ALERTAS MEJORADO! ---
+    //Metodo generar alertas
     public void generarAlertas() {
         System.out.println("\n--- Buscando alertas de entregas próximas (en 7 días o menos) ---");
         boolean haAlertas = false;
 
-        // Recorremos a cada estudiante registrado
+        // Recorrer a cada estudiante registrado
         for (Estudiante estudiante : this.estudiantesRegistrados) {
-            // De cada estudiante, tomamos sus asignaturas inscritas
+            // De cada estudiante sus asignaturas inscritas
             for (Asignatura asignatura : estudiante.getAsignaturasInscritas()) {
-                // Y de cada asignatura, revisamos sus evaluaciones
+                // Y de cada asignatura sus evaluaciones
                 for (Evaluacion evaluacion : asignatura.getEvaluaciones()) {
 
                     long diferenciaEnMilisegundos = evaluacion.getFecha_de_entrega().getTime() - new Date().getTime();
+                    //calculo de dias
                     long diasRestantes = diferenciaEnMilisegundos / (1000 * 60 * 60 * 24);
 
                     if (diasRestantes >= 0 && diasRestantes <= 7) {
                         System.out.println("--------------------------------------------------");
-                        // La alerta ahora es específica para el estudiante
+
                         System.out.println(" ¡ALERTA PARA " + estudiante.getNombres().toUpperCase() + "!");
                         System.out.println("   -> Asignatura: " + asignatura.getNombre_asignatura());
                         System.out.println("   -> Evaluación: " + evaluacion.getNombre_evaluacion());

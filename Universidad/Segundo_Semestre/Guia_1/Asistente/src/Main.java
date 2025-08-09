@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 public class Main {
@@ -22,7 +21,7 @@ public class Main {
             System.out.print("Elige una opción: ");
 
             int opcion = scanner.nextInt();
-            scanner.nextLine(); // Limpiar buffer
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1:
@@ -39,10 +38,10 @@ public class Main {
                 case 2:
                     System.out.println("\n--- Nueva Asignatura ---");
                     System.out.print("Nombre de la asignatura: ");
-                    String nomAsig = scanner.nextLine();
+                    String nomAsignatura = scanner.nextLine();
                     System.out.print("Modalidad: ");
                     String mod = scanner.nextLine();
-                    asistente.registrarAsignaturas(new Asignatura(nomAsig, mod));
+                    asistente.registrarAsignaturas(new Asignatura(nomAsignatura, mod));
                     System.out.println("¡Asignatura registrada!");
                     break;
                 case 3: // --- LÓGICA PARA INSCRIBIR ---
