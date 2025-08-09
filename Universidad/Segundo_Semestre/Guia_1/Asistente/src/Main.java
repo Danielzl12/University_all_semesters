@@ -14,7 +14,7 @@ public class Main {
             System.out.println("\n===== MENÚ PRINCIPAL =====");
             System.out.println("1. Registrar Estudiante");
             System.out.println("2. Registrar Asignatura");
-            System.out.println("3. Inscribir Estudiante en Asignatura"); // <-- NUEVA OPCIÓN
+            System.out.println("3. Inscribir Estudiante en Asignatura");
             System.out.println("4. Agregar Evaluación a Asignatura");
             System.out.println("5. Generar Alertas");
             System.out.println("6. Salir");

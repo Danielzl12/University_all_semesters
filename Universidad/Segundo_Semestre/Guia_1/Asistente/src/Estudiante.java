@@ -19,6 +19,7 @@ public class Estudiante {
         this.asignaturasInscritas.add(asignatura);
     }
 
+
     // Getters
     public String getNombres() {
         return nombres;

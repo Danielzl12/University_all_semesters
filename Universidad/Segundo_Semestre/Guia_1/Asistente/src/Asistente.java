@@ -20,6 +20,7 @@ public class Asistente {
         this.asignaturasRegistradas.add(asignatura);
     }
 
+
     // Getters para que el Main pueda ver las listas
     public List<Estudiante> getEstudiantesRegistrados() {
         return estudiantesRegistrados;
