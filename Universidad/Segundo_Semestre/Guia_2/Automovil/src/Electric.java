@@ -1,13 +1,17 @@
-public class Electric extends Automovil{
-    String entrada_carga;
-    String Autonomia_en_km;
+// Clase que representa un automóvil eléctrico
+public class Electric extends Automovil {
+    // Autonomía estimada con una carga completa (en kilómetros)
+    int autonomia_en_km;
 
 
-    public Electric(String marca, String modelo, String color, String caja_de_cambios,String entrada_carga,String autonomia_en_km){
-        super(marca,modelo,color,caja_de_cambios);
+    // Constructor que inicializa atributos del automóvil eléctrico y los comunes de la clase base
+    public Electric(String marca, String modelo, String color, String tipo_de_transmision, int autonomia_en_km) {
+        super(marca, modelo, color, tipo_de_transmision);
+        this.autonomia_en_km = autonomia_en_km;
     }
-    public void carga_rapida(){
-    }
-    public void piloto_automatico(){
+
+    // metodo para cargar bateria
+    public void cargarBateria() {
+        System.out.println("Conectando el " + this.marca + " " + this.modelo + " a la estación de carga rápida.");
     }
 }
