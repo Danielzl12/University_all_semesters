@@ -67,3 +67,18 @@ print(f"Número '{numero_str}' (base {base_M}) en base {base_N} es: {resultado}"
 print(f"El valor del número en decimal (base 10) es: {decimal}")
 print(f"El valor del número en binario es: {binario}")
 print(f"El valor como código ASCII es: {ascii_val} = '{ascii_char}'")
+
+
+'''Explicación sobre la codificación de caracteres (ASCII):
+    
+    El carácter que se muestra para un código numérico (ej: 230) depende de la "página de códigos"
+    o "tabla de caracteres" que use el sistema operativo.
+    
+    - En la tabla 'Windows-1252' (común en web y sistemas modernos), el código 230 es 'æ'.
+    - En la tabla 'Code Page 437' (común en la consola de Windows), el código 230 es 'µ'.
+    
+    El resultado que veas por medio de el teclado dependerá de la configuración del entorno.
+    la tabla de "windows-1252" (la que usa python) es la siguiente
+    https://www.ascii-code.com/es/tabla-de-codigos'''
+    
+    #puse esta breve explicacion para justificar el uso de la funcion "chr" ya que yo no entendia el porque me daba diferente
