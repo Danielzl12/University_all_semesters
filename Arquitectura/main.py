@@ -1,31 +1,69 @@
-def conversion():
-    baseOrigen = int(input("Escriba la base de origen: "))
-    baseDestino = int(input("Escriba la base de destino: "))
-    numeroIngresado = input("Escriba el numero a convertir: ")
-    largo = len(numeroIngresado)
+def convertir_base(numero_original, base_origen, base_destino):
+    valores = {
+        '0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9,
+        'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15
+    }
+    
+    numero_en_decimal = 0
+    potencia = 0
+    
+    for digito in numero_original[::-1]:
+        valor_del_digito = valores[digito.upper()]
+        numero_en_decimal += valor_del_digito * (base_origen ** potencia)
+        potencia += 1
 
-    while baseOrigen < 0 or baseOrigen > 16:
-        print("El numero ingresado no es valido. Debe estar entre 2 y 16.")
-        baseOrigen = int(input("Escriba la base de origen: "))
+    digitos_resultado = "0123456789ABCDEF"
+    numero_final = ""
+    
+    temp_decimal_para_conversion = numero_en_decimal
+    
+    if temp_decimal_para_conversion == 0:
+        numero_final = '0'
+    else:
+        while temp_decimal_para_conversion > 0:
+            residuo = temp_decimal_para_conversion % base_destino
+            numero_final = digitos_resultado[residuo] + numero_final
+            temp_decimal_para_conversion //= base_destino
+    
+    valor_binario = decimal_a_binario(numero_en_decimal)
+    
 
-    while baseDestino < 0 or baseDestino > 16:
-        print("El numero ingresado no es valido. Debe estar entre 2 y 16.")
-        baseDestino = int(input("Escriba la base de destino: "))
+    codigo_ascii = numero_en_decimal
+    caracter_ascii = chr(codigo_ascii)
 
+    return numero_final, numero_en_decimal, valor_binario, codigo_ascii, caracter_ascii
 
-    numero_convertido_a_base_10 = 0
-    potencia = len(numeroIngresado) - 1
+def decimal_a_binario(n):
+    if n == 0:
+        return "0"
+    binario = ""
+    while n > 0:
+        binario = str(n % 2) + binario
+        n //= 2
+    return binario
 
-    for digito in numeroIngresado:
+print("CONVERSOR DE BASES NUMÉRICAS")
 
+while True:
+    base_M = int(input("Digíte la base de origen (2-16): "))
+    if 2 <= base_M <= 16:
+        break
+    else:
+        print("Error: La base debe ser un número entre 2 y 16.")
 
+while True:
+    base_N = int(input("Digíte la base de destino (2-16): "))
+    if 2 <= base_N <= 16:
+        break
+    else:
+        print("Error: La base debe ser un número entre 2 y 16.")
 
+numero_str = input(f"Digíte el número en base {base_M}: ")
 
-        # Aquí dentro es donde tienes que:
-        # 1. Convertir el 'digito' a su valor numérico (recuerda que 'A' es 10).
-        # 2. Calcular su valor posicional: valor_del_digito * (baseOrigen ** potencia)
-        # 3. Sumarlo a 'numero_convertido_a_base_10'.
-        # 4. Restarle 1 a la 'potencia'.
+resultado, decimal, binario, ascii_val, ascii_char = convertir_base(numero_str, base_M, base_N)
 
-
-conversion()
+print("\nRESULTADOS")
+print(f"Número '{numero_str}' (base {base_M}) en base {base_N} es: {resultado}")
+print(f"El valor del número en decimal (base 10) es: {decimal}")
+print(f"El valor del número en binario es: {binario}")
+print(f"El valor como código ASCII es: {ascii_val} = '{ascii_char}'")
