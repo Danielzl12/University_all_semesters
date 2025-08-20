@@ -6,6 +6,7 @@ public class Evento {
     String nombres;
     Date fecha;
     private List<Asistentes> personas_que_asisten;
+    int limite = 4;
 
     public Evento(String nombres, Date fecha){
         this.nombres = nombres;
@@ -13,7 +14,13 @@ public class Evento {
         this.personas_que_asisten = new ArrayList<>(); //para inicializar la lista
     }
 
-    public void agregarAsistentes(Asistentes nuevos_asistentes){
+    public void agregarAsistentes(List<Asistentes> lista,Asistentes nuevos_asistentes,int limite){
+        if (lista.size()< limite){
+            lista.add(personas_que_asisten);
+            System.out.println("Asistente "+ personas_que_asisten + " agregado.");
+        }else {
+            System.out.println("Asistente " + personas_que_asisten + " no se pudo agregar, ya se lleno la capacidad de asistentes.");
+        }
         this.personas_que_asisten.add(nuevos_asistentes);
     }
 
