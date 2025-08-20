@@ -79,6 +79,7 @@ print(f"El valor como código ASCII es: {ascii_val} = '{ascii_char}'")
     
     El resultado que veas por medio de el teclado dependerá de la configuración del entorno.
     la tabla de "windows-1252" (la que usa python) es la siguiente
-    https://www.ascii-code.com/es/tabla-de-codigos'''
+    https://www.ascii-code.com/es/tabla-de-codigos
     
-    #puse esta breve explicacion para justificar el uso de la funcion "chr" ya que yo no entendia el porque me daba diferente
+    Puse esta breve explicación para justificar el uso de la función "chr" ya que yo no entendía el porque me daba diferente'''
+    
