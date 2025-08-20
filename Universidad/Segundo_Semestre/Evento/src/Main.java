@@ -1,15 +1,64 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.sql.SQLOutput;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Evento evento = new Evento();
+        Scanner scanner = new Scanner(System.in);
+        boolean salir = false;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        System.out.println("Bienvenido al registro de asistentes para el evento:");
+
+        while(!salir) {
+            System.out.println("\n===== MENÚ PRINCIPAL =====");
+            System.out.println("1. Registrar Evento");
+            System.out.println("2. Registrar Asistente");
+            System.out.println("3. Inscribir Asistente en Evento");
+            System.out.println("4. Obtener informacion del asistente");
+            System.out.println("5. Obtener informacion del evento");
+            System.out.println("6. Salir");
+            System.out.print("Elige una opción: ");
+
+            int opcion = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("\n--- Nuevo Evento ---");
+                    System.out.print("Nombre del evento: ");
+                    String nombreEvento = scanner.nextLine();
+
+                    System.out.print("Día del evento (ej: 25): ");
+                    int dia = scanner.nextInt();
+                    System.out.print("Mes del evento (ej: 12 para Diciembre): ");
+                    int mes = scanner.nextInt() - 1; // Calendar es 0-11
+                    System.out.print("Año del evento (ej: 2025): ");
+                    int year = scanner.nextInt();
+                    scanner.nextLine();
+
+                    Calendar cal = Calendar.getInstance();
+                    cal.set(year, mes, dia);
+                    System.out.println("Evento Registrado");evento.registrarEvento(new Evento(nombreEvento, cal.getTime()));
+                    break;
+                case 2:
+                    System.out.println("\n--- Nuevo asistente ---");
+                    System.out.print("Nombre del asistente a registrar: ");
+                    String nombreAsistente = scanner.nextLine();
+                    System.out.print("Email asistente: ");
+                    String email = scanner.nextLine();
+                    System.out.print("Numero de celular: ");
+                    String numero = scanner.nextLine();
+                    evento.agregarAsistente(new Asistentes(nombreAsistente, email, numero));
+                    break;
+                case 3:
+                    System.out.println("\n--- Generar informacion ---");
+
+
+
+
+            }
     }
+
 }
