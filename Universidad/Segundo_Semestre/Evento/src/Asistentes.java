@@ -20,4 +20,9 @@ public class Asistentes {
     public String getNumero() {
         return numero;
     }
+
+
+    public void mostrarInformacion() {
+        System.out.println("- Asistente: " + getNombre() + "\n Email: " + getEmail());
+    }
 }

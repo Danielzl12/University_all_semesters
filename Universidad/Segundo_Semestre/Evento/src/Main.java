@@ -17,9 +17,10 @@ public class Main {
             System.out.println("\n===== MENÚ PRINCIPAL =====");
             System.out.println("1. Configurar Evento");
             System.out.println("2. Registrar Nuevo Asistente");
-            System.out.println("3. Inscribir Asistente al Evento");
-            System.out.println("4. Ver Resumen del Evento"); // <-- Opción de menú actualizada
-            System.out.println("5. Salir"); // <-- Opción de menú actualizada
+            System.out.println("3. Registrar Nuevo Asistente VIP");
+            System.out.println("4. Inscribir Asistente al Evento");
+            System.out.println("5. Ver Resumen del Evento");
+            System.out.println("6. Salir");
             System.out.print("Elige una opción: ");
 
             int opcion = scanner.nextInt();
@@ -57,6 +58,22 @@ public class Main {
                     break;
 
                 case 3:
+                    System.out.println("\n--- Nuevo Asistente VIP ---");
+                    System.out.print("Nombre del asistente VIP: ");
+                    String nombreAsistenteVIP = scanner.nextLine();
+                    System.out.print("Email del asistente VIP: ");
+                    String emailVIP = scanner.nextLine();
+                    System.out.print("Número de celular: ");
+                    String numeroVIP = scanner.nextLine();
+
+                    // Aquí está la clave: creamos un objeto de la clase hija
+                    Asistentes nuevoAsistenteVIP = new AsistenteVIP(nombreAsistenteVIP, emailVIP, numeroVIP);
+
+                    // Lo guardamos en la MISMA lista de siempre. ¡Esto es polimorfismo!
+                    asistentesRegistrados.add(nuevoAsistenteVIP);
+                    System.out.println(">> Asistente VIP '" + nombreAsistenteVIP + "' registrado en el sistema.");
+                    break;
+                case 4:
                     System.out.println("\n--- Inscribir Asistente al Evento '" + miEvento.getNombre());
                     System.out.print("Nombre del asistente a inscribir: ");
                     String asistenteAInscribir = scanner.nextLine();
@@ -70,25 +87,24 @@ public class Main {
                     if (asistenteEncontrado != null) {
                         miEvento.agregarAsistente(asistenteEncontrado);
                     } else {
-                        System.out.println(" No se registro un asistente con ese nombre.");
+                        System.out.println(" No se encuentra un asistente con ese nombre.");
                     }
                     break;
 
 
-                case 4:
-                    System.out.println("\n--- RESUMEN DEL EVENTO ---");
+                case 5:
+                    System.out.println("RESUMEN DEL EVENTO");
                     System.out.println(" Nombre: " + miEvento.getNombre());
                     System.out.println(" Fecha: " + miEvento.getFecha());
                     System.out.println("️ Cupos disponibles: " + miEvento.getCuposDisponibles());
                     System.out.println(" Asistentes inscritos (" + miEvento.getPersonas_que_asisten().size() + "):");
                         for (Asistentes asistente : miEvento.getPersonas_que_asisten()) {
-                            // Por cada 'asistente' en la lista, imprimimos su nombre
-                            System.out.println("  - " + asistente.getNombre());
+                        asistente.mostrarInformacion();
                         }
 
                     break;
 
-                case 5:
+                case 6:
                     salir = true;
                     System.out.println("¡Hasta luego!");
                     break;
