@@ -6,6 +6,6 @@
 
         @Override
         public void mostrarInformacion() {
-            System.out.println(" Staff del evento: " + getNombre() + " | Contacto: " + getEmail());
+            System.out.println(" Staff del evento: " + getNombre() + " \n Contacto: " + getEmail());
         }
 }
