@@ -17,10 +17,11 @@ public class Main {
             System.out.println("\n===== MENÚ PRINCIPAL =====");
             System.out.println("1. Configurar Evento");
             System.out.println("2. Registrar Nuevo Asistente");
-            System.out.println("3. Registrar Nuevo Asistente VIP");
-            System.out.println("4. Inscribir Asistente al Evento");
-            System.out.println("5. Ver Resumen del Evento");
-            System.out.println("6. Salir");
+            System.out.println("3. Registrar Nuevo Asistente Estudiante");
+            System.out.println("4. Registrar Nuevo Asistente del Staff");
+            System.out.println("5. Inscribir Asistente al Evento");
+            System.out.println("6. Ver Resumen del Evento");
+            System.out.println("7. Salir");
             System.out.print("Elige una opción: ");
 
             int opcion = scanner.nextInt();
@@ -58,22 +59,37 @@ public class Main {
                     break;
 
                 case 3:
-                    System.out.println("\n--- Nuevo Asistente VIP ---");
-                    System.out.print("Nombre del asistente VIP: ");
-                    String nombreAsistenteVIP = scanner.nextLine();
-                    System.out.print("Email del asistente VIP: ");
-                    String emailVIP = scanner.nextLine();
+                    System.out.println("\n--- Nuevo Asistente Estudiantil ---");
+                    System.out.print("Nombre del asistente estudiantil: ");
+                    String nombreAsistenteEstudiantil = scanner.nextLine();
+                    System.out.print("Email del asistente estudiantil: ");
+                    String emailEstudiante = scanner.nextLine();
                     System.out.print("Número de celular: ");
-                    String numeroVIP = scanner.nextLine();
+                    String numeroEstudiante = scanner.nextLine();
 
                     // Aquí está la clave: creamos un objeto de la clase hija
-                    Asistentes nuevoAsistenteVIP = new AsistenteVIP(nombreAsistenteVIP, emailVIP, numeroVIP);
+                    Asistentes nuevoAsistenteEstudiante = new AsistenteEstudiante(nombreAsistenteEstudiantil, emailEstudiante, numeroEstudiante);
 
                     // Lo guardamos en la MISMA lista de siempre. ¡Esto es polimorfismo!
-                    asistentesRegistrados.add(nuevoAsistenteVIP);
-                    System.out.println(">> Asistente VIP '" + nombreAsistenteVIP + "' registrado en el sistema.");
+                    asistentesRegistrados.add(nuevoAsistenteEstudiante);
+                    System.out.println(">> Asistente Estudiantil '" + nombreAsistenteEstudiantil + "' registrado en el sistema.");
                     break;
                 case 4:
+                    System.out.println("\nNuevo Miembro del Staff");
+                    System.out.print("Nombre del miembro: ");
+                    String nombreStaff = scanner.nextLine();
+                    System.out.print("Email de contacto: ");
+                    String emailStaff = scanner.nextLine();
+                    System.out.print("Número de celular: ");
+                    String numeroStaff = scanner.nextLine();
+
+                    Asistentes nuevoStaff = new Staff(nombreStaff, emailStaff, numeroStaff);
+
+                    // Lo agregas a la MISMA lista de siempre.
+                    asistentesRegistrados.add(nuevoStaff);
+                    System.out.println(">> Miembro del staff '" + nombreStaff + "' registrado.");
+                    break;
+                case 5:
                     System.out.println("\n--- Inscribir Asistente al Evento '" + miEvento.getNombre());
                     System.out.print("Nombre del asistente a inscribir: ");
                     String asistenteAInscribir = scanner.nextLine();
@@ -92,7 +108,7 @@ public class Main {
                     break;
 
 
-                case 5:
+                case 6:
                     System.out.println("RESUMEN DEL EVENTO");
                     System.out.println(" Nombre: " + miEvento.getNombre());
                     System.out.println(" Fecha: " + miEvento.getFecha());
@@ -104,7 +120,7 @@ public class Main {
 
                     break;
 
-                case 6:
+                case 7:
                     salir = true;
                     System.out.println("¡Hasta luego!");
                     break;
