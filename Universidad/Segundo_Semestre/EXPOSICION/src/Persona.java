@@ -16,7 +16,7 @@ public abstract class Persona {
 
     }
 
-    // Metodo abstracto que DEBE ser implementado por cada subclase (Polimorfismo)
+    // Metodo abstracto el cual las otras classess van a sobreeescribir
     public abstract void consultarInfoPersonal();
 
     // Getters para acceder a la información desde fuera
@@ -28,3 +28,4 @@ public abstract class Persona {
         return apellidos;
     }
 }
+
