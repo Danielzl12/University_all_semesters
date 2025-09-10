@@ -59,7 +59,7 @@ public class Main {
                     break;
 
                 case 3:
-                    System.out.println("\n--- Nuevo Asistente Estudiantil ---");
+                    System.out.println("\n- Nuevo Asistente Estudiantil -");
                     System.out.print("Nombre del asistente estudiantil: ");
                     String nombreAsistenteEstudiantil = scanner.nextLine();
                     System.out.print("Email del asistente estudiantil: ");
@@ -87,7 +87,7 @@ public class Main {
 
                     // Lo agregas a la MISMA lista de siempre.
                     asistentesRegistrados.add(nuevoStaff);
-                    System.out.println(">> Miembro del staff '" + nombreStaff + "' registrado.");
+                    System.out.println("- Miembro del staff '" + nombreStaff + "' registrado.");
                     break;
                 case 5:
                     System.out.println("\n--- Inscribir Asistente al Evento '" + miEvento.getNombre());
