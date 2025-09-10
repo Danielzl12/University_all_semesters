@@ -1,4 +1,4 @@
-// Archivo: Docente.java
+
 public class Docente extends Persona {
     private String departamento;
 

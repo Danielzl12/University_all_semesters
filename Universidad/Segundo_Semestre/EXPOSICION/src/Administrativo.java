@@ -11,9 +11,6 @@ public class Administrativo extends Persona {
         this.salario = salario;
     }
 
-    public void generarListadoEstudiantes() {
-        System.out.println("El administrativo " + nombres + " está generando un listado de estudiantes.");
-    }
 
     @Override
     public void consultarInfoPersonal() {

@@ -1,4 +1,4 @@
-// Archivo: Estudiante.java
+
 public class Estudiante extends Persona {
     private String codigo;
 
